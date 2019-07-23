@@ -1,0 +1,13 @@
+<div *ngIf="brewery != null">
+  <h1>{{brewery.name}}</h1><a [href]="brewery.website_url">{{brewery.website_url}}</a>
+  <pre>
+    {{brewery.street}}
+    {{brewery.city}} {{brewery.state}} {{brewery.postal_code}}</pre>
+
+  <div *ngIf="brewery.latitude != null">
+    <agm-map [latitude]="+brewery.latitude" [longitude]="+brewery.longitude" [zoom]="zoom">
+      <agm-marker [latitude]="+brewery.latitude" [longitude]="+brewery.longitude"></agm-marker>
+    </agm-map>
+  </div>
+
+</div>
